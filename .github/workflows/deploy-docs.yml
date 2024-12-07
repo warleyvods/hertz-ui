@@ -6,41 +6,25 @@ on:
       - 'master'
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - run: npm install
-        working-directory: ./packages/ui
-
-      - run: npm run build
-        working-directory: ./packages/ui
-
-      - run: npm install
         working-directory: ./apps/storybook
 
       - run: npm run build
         working-directory: ./apps/storybook
 
-      - name: Setup Git for GitHub Pages
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          echo "https://${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
-          git config --global credential.helper store
-
-      # Deploy para o GitHub Pages
-      - run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
-        working-directory: ./apps/storybook
+      - name: Deploy Storybook
+        uses: jamesives/github-pages-deploy-action@v4
+        with:
+          folder: ./apps/storybook/storybook-static
