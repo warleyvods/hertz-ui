@@ -34,6 +34,13 @@ jobs:
       - run: npm run build
         working-directory: ./apps/storybook
 
+      - name: Setup Git for GitHub Pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          echo "https://${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+          git config --global credential.helper store
+
+      # Deploy para o GitHub Pages
       - run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         working-directory: ./apps/storybook
-
