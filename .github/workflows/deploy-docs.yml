@@ -23,9 +23,15 @@ jobs:
           node-version: '20'
 
       - run: npm install
+        working-directory: ./packages/ui
+
+      - run: npm build
+        working-directory: ./packages/ui
+
+      - run: npm install
         working-directory: ./apps/storybook
 
-      - run: npm run build
+      - run: npm build
         working-directory: ./apps/storybook
 
       - name: Deploy Storybook to GitHub Pages
