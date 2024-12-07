@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const sharedConfig = require("@repo/tailwind-config/tailwind.config.js");
+const sharedConfig = require("@hertz-ui/tailwind-config/tailwind.config.js");
 
 module.exports = {
   ...sharedConfig,
@@ -8,6 +8,6 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    // "../../packages/ui/**/*.{js,ts,jsx,tsx,mdx}",
+    // "../../packages/react/**/*.{js,ts,jsx,tsx,mdx}",
   ],
 };

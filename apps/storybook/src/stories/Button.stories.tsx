@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@hertz/ui";
+import { Button } from "@hertz-ui/react";
 
 // Meta configuration for the Button component
 const meta: Meta<typeof Button> = {

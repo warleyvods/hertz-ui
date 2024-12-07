@@ -1,7 +1,7 @@
 {
-  "name": "@hertz/ui",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@hertz-ui/react",
+  "version": "2.0.1",
+  "private": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -21,9 +21,9 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/tailwind-config": "*",
-    "@repo/typescript-config": "*",
+    "@hertz-ui/eslint-config": "*",
+    "@hertz-ui/tailwind-config": "*",
+    "@hertz-ui/typescript-config": "*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",

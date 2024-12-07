@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import "@hertz/ui/styles.css";
+import "@hertz-ui/react/styles.css";
 import "../src/index.css";
 
 const preview: Preview = {
