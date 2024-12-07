@@ -22,10 +22,14 @@ jobs:
         with:
           node-version: '20'
 
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      - run: npm ci
         working-directory: ./apps/storybook
+
+      - run: npm run build
+        working-directory: ./apps/storybook
+
+      - name: Deploy Storybook to GitHub Pages
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
-          install_command: npm ci
-          build_command: npm run build
           path: storybook-static
           checkout: false
