@@ -25,13 +25,13 @@ jobs:
       - run: npm install
         working-directory: ./packages/ui
 
-      - run: npm build
+      - run: npm run build
         working-directory: ./packages/ui
 
       - run: npm install
         working-directory: ./apps/storybook
 
-      - run: npm build
+      - run: npm run build
         working-directory: ./apps/storybook
 
       - name: Deploy Storybook to GitHub Pages
