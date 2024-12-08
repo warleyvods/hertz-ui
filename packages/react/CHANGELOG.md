@@ -1,5 +1,11 @@
 # @hertz-ui/react
 
+## 2.0.2
+
+### Patch Changes
+
+- Changes button
+
 ## 2.0.1
 
 ### Patch Changes
