@@ -1,71 +1,102 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@hertz-ui/react";
 
-// Meta configuration for the Button component
-const meta: Meta<typeof Button> = {
-  title: "Components/Button",
+const meta = {
+  title: 'Shadcn/button',
   component: Button,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    className: { control: "text" },
-    appName: { control: "text" },
-    children: { control: "text" },
+    variant: {
+      control: { type: 'select' },
+      options: [
+        'default',
+        'secondary',
+        'destructive',
+        'ghost',
+        'link',
+        'outline',
+      ],
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['default', 'icon', 'sm', 'lg'],
+    },
   },
-};
+  parameters: {
+    layout: 'centered',
+  },
+} satisfies Meta<typeof Button>
 
-export default meta;
-type Story = StoryObj<typeof Button>;
+export default meta
 
-export const Primary: Story = {
+type Story = StoryObj<typeof meta>
+
+//color
+export const Default: Story = {
   args: {
-    appName: "Storybook",
-    className: "px-4 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded-lg",
-    children: "Click me!",
+    variant: 'default',
+    children: 'ButtonShadcn',
   },
-};
+}
 
 export const Secondary: Story = {
   args: {
-    appName: "Docs",
-    className: "px-4 py-2 text-white bg-gray-500 hover:bg-gray-700 rounded-lg",
-    children: "Secondary Button",
+    variant: 'secondary',
+    children: 'ButtonShadcn',
   },
-};
+}
 
-export const Large: Story = {
+export const Destructive: Story = {
   args: {
-    appName: "LargeApp",
-    className:
-      "px-6 py-3 text-white text-xl bg-green-500 hover:bg-green-700 rounded-lg",
-    children: "Large Button",
+    variant: 'destructive',
+    children: 'ButtonShadcn',
   },
-};
+}
 
-export const Small: Story = {
+export const Ghost: Story = {
   args: {
-    appName: "SmallApp",
-    className:
-      "px-2 py-1 text-sm text-white bg-red-500 hover:bg-red-700 rounded-md",
-    children: "Small Button",
+    variant: 'ghost',
+    children: 'ButtonShadcn',
   },
-};
+}
 
-export const Disabled: Story = {
+export const Link: Story = {
   args: {
-    appName: "DisabledApp",
-    className: "px-4 py-2 text-white bg-gray-300 cursor-not-allowed rounded-lg",
-    children: "Disabled Button",
+    variant: 'link',
+    children: 'ButtonShadcn',
   },
-};
+}
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    children: 'ButtonShadcn',
+  },
+}
 
-export const Custom: Story = {
+//size
+
+export const SizeDefault: Story = {
   args: {
-    appName: "CustomApp",
-    className:
-      "px-4 py-2 bg-gradient-to-r from-pink-500 to-yellow-500 text-white hover:from-yellow-500 hover:to-pink-500 rounded-lg shadow-lg",
-    children: "Custom Styled Button",
+    size: 'default',
+    children: 'ButtonShadcn',
   },
-};
+}
+export const SizeIcon: Story = {
+  args: {
+    size: 'icon',
+    children: 'icon',
+  },
+}
+export const SizeLarge: Story = {
+  args: {
+    size: 'lg',
+    children: 'ButtonShadcn',
+  },
+}
+
+export const SizeSmall: Story = {
+  args: {
+    size: 'sm',
+    children: 'ButtonShadcn',
+  },
+}

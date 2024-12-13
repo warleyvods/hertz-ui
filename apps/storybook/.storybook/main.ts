@@ -9,6 +9,7 @@ import { join, dirname } from "path";
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
 }
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -17,6 +18,14 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: {
+          implementation: require.resolve("postcss")
+        }
+      }
+    }
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),

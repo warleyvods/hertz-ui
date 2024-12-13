@@ -1,5 +1,17 @@
 # @hertz-ui/react
 
+## 2.0.4
+
+### Patch Changes
+
+- Add badge fix
+
+## 2.0.3
+
+### Patch Changes
+
+- Add badge
+
 ## 2.0.2
 
 ### Patch Changes
