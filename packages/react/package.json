@@ -8,7 +8,7 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./styles.css": "./dist/index.css"
+    "./src/styles.css": "./dist/index.css"
   },
   "sideEffects": [
     "**/*.css"
@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@hertz-ui/eslint-config": "*",
-    "@hertz-ui/tailwind-config": "*",
     "@hertz-ui/typescript-config": "*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
